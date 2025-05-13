@@ -1,0 +1,1 @@
+# CORBA to REST Clientモジュール
