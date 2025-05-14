@@ -34,6 +34,12 @@ public class ClientMain {
 			userInfoHolder user = new userInfoHolder();
 			accountInfoHolder account = new accountInfoHolder();
 			System.out.println(helloImpl.sayHello(req, user, account));
+			System.out.println("Client Response");
+			System.out.println(user.value.userName);
+			System.out.println(user.value.userId);
+			System.out.println(user.value.phoneNumber);
+			System.out.println(user.value.accountInfo);
+			
 			//	          helloImpl.shutdown();
 			
 		} catch (Exception e) {

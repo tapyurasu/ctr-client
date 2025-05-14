@@ -5,7 +5,7 @@ package ESB;
 * ESB/userInfoHelper.java .
 * IDL-to-Javaコンパイラ(ポータブル)、バージョン"3.2"によって生成されました
 * ESB.idlから
-* 2025年5月1日 7時29分15秒 JST
+* 2025年5月15日 7時10分12秒 JST
 */
 
 abstract public class userInfoHelper
@@ -40,21 +40,26 @@ abstract public class userInfoHelper
             return org.omg.CORBA.ORB.init().create_recursive_tc ( _id );
           }
           __active = true;
-          org.omg.CORBA.StructMember[] _members0 = new org.omg.CORBA.StructMember [3];
+          org.omg.CORBA.StructMember[] _members0 = new org.omg.CORBA.StructMember [4];
           org.omg.CORBA.TypeCode _tcOf_members0 = null;
           _tcOf_members0 = org.omg.CORBA.ORB.init ().create_string_tc (0);
           _members0[0] = new org.omg.CORBA.StructMember (
-            "userId",
+            "userName",
             _tcOf_members0,
             null);
           _tcOf_members0 = org.omg.CORBA.ORB.init ().create_string_tc (0);
           _members0[1] = new org.omg.CORBA.StructMember (
-            "userName",
+            "userId",
             _tcOf_members0,
             null);
           _tcOf_members0 = org.omg.CORBA.ORB.init ().create_string_tc (0);
           _members0[2] = new org.omg.CORBA.StructMember (
             "phoneNumber",
+            _tcOf_members0,
+            null);
+          _tcOf_members0 = org.omg.CORBA.ORB.init ().create_string_tc (0);
+          _members0[3] = new org.omg.CORBA.StructMember (
+            "accountInfo",
             _tcOf_members0,
             null);
           __typeCode = org.omg.CORBA.ORB.init ().create_struct_tc (ESB.userInfoHelper.id (), "userInfo", _members0);
@@ -73,17 +78,19 @@ abstract public class userInfoHelper
   public static ESB.userInfo read (org.omg.CORBA.portable.InputStream istream)
   {
     ESB.userInfo value = new ESB.userInfo ();
-    value.userId = istream.read_string ();
     value.userName = istream.read_string ();
+    value.userId = istream.read_string ();
     value.phoneNumber = istream.read_string ();
+    value.accountInfo = istream.read_string ();
     return value;
   }
 
   public static void write (org.omg.CORBA.portable.OutputStream ostream, ESB.userInfo value)
   {
-    ostream.write_string (value.userId);
     ostream.write_string (value.userName);
+    ostream.write_string (value.userId);
     ostream.write_string (value.phoneNumber);
+    ostream.write_string (value.accountInfo);
   }
 
 }
